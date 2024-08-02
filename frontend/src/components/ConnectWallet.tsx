@@ -1,36 +1,24 @@
 "use client"
 // eslint-disable/no-unused-vars
-import React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { connect, disconnect } from "starknetkit"
 import { Button } from './ui/button';
 import { useAccount } from '../provider/AccountProvider';
 
 function Connect() {
-  const [connection, setConnection] = useState('');
+  const [connection, setConnection] = useState(Boolean);
   const [address, setAddress] = useState('');
   const { account, setAccount } = useAccount();
 
 
 
-  useEffect(() => {
-    const connectToStarknet = async() => {
-        const { wallet } = await connect( { modalMode: "neverAsk"} )
 
-        if (wallet && wallet.isConnected) {
-            setConnection(wallet)
-            setAccount(wallet.account)
-            setAddress(wallet.selectedAddress)
-        }
-        connectToStarknet()
-    }
-  }, [])
 
   const connectWallet = async() => {
     const { wallet } = await connect( { webWalletUrl: "https://web.argent.xyz" } )
 
     if(wallet && wallet.isConnected) {
-        setConnection(wallet)
+        setConnection(wallet.isConnected)
         setAccount(wallet.account)
         setAddress(wallet.selectedAddress)
     }
