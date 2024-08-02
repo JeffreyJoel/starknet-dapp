@@ -1,0 +1,42 @@
+[
+    {
+      "type": "impl",
+      "name": "SetterGetterImpl",
+      "interface_name": "/opt/app/api/upload/temp/07d31b2b3e2d78fc3fcb96dade829b19bd0968411718d85741268b086dea058b/cairo-study::ISetterGetter"
+    },
+    {
+      "type": "interface",
+      "name": "/opt/app/api/upload/temp/07d31b2b3e2d78fc3fcb96dade829b19bd0968411718d85741268b086dea058b/cairo-study::ISetterGetter",
+      "items": [
+        {
+          "type": "function",
+          "name": "set_name",
+          "inputs": [
+            {
+              "name": "_name",
+              "type": "core::felt252"
+            }
+          ],
+          "outputs": [],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_name",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::felt252"
+            }
+          ],
+          "state_mutability": "view"
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "name": "/opt/app/api/upload/temp/07d31b2b3e2d78fc3fcb96dade829b19bd0968411718d85741268b086dea058b/cairo-study::SetterGetter::Event",
+      "kind": "enum",
+      "variants": []
+    }
+  ]
